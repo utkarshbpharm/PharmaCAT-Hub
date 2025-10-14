@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CAT Preparation Guide — Time Management, Mocks & Expert Strategies</title>
+  <style>
+    :root{
+      --bg:#f7f8fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#0ea5a4;
+      --heading:#0f172a;
+      --maxwidth:900px;
+      --shadow: 0 6px 18px rgba(15,23,42,0.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, var(--bg), #ffffff);
+      color:var(--heading);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:28px;
+      display:flex;
+      justify-content:center;
+    }
+    .container{
+      max-width:var(--maxwidth);
+      width:100%;
+    }
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      margin-bottom:20px;
+    }
+    header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:8px;
+    }
+    header h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing:-0.2px;
+    }
+    header p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .meta{
+      display:flex;
+      gap:12px;
+      margin-top:10px;
+      flex-wrap:wrap;
+    }
+    .pill{
+      background:rgba(14,165,164,0.08);
+      color:var(--accent);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:13px;
+      border:1px solid rgba(14,165,164,0.12);
+    }
+
+    h2{font-size:16px;margin:18px 0 8px;}
+    h3{font-size:14px;margin:12px 0 6px;color:#0b1220;}
+    p{margin:8px 0;color:#111827;}
+    ul{margin:8px 0 8px 20px;}
+    ol{margin:8px 0 8px 20px;}
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:8px;
+      font-size:14px;
+    }
+    thead th{
+      text-align:left;
+      padding:8px;
+      background:#f3f4f6;
+      border-bottom:1px solid #e6e7ea;
+      font-weight:600;
+    }
+    tbody td{
+      padding:10px 8px;
+      border-bottom:1px dashed #eef0f3;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .full{grid-column:1/-1;}
+    .note{
+      background:linear-gradient(90deg, rgba(14,165,164,0.06), rgba(99,102,241,0.04));
+      padding:12px;
+      border-radius:8px;
+      border:1px solid rgba(15,23,42,0.03);
+      color:#0f172a;
+      font-size:14px;
+    }
+    .cta-row{
+      display:flex;
+      gap:10px;
+      margin-top:14px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      padding:10px 14px;
+      border-radius:8px;
+      font-weight:600;
+      cursor:pointer;
+      border:0;
+    }
+    .btn-primary{
+      background:var(--accent);
+      color:white;
+    }
+    .btn-ghost{
+      background:transparent;
+      border:1px solid #e6e7ea;
+      color:var(--heading);
+    }
+    footer{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
+
+    /* Print friendly */
+    @media print{
+      body{padding:0}
+      .card{box-shadow:none;border-radius:0}
+    }
+
+    /* Responsive */
+    @media (max-width:740px){
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <article class="card" aria-labelledby="title">
+      <header>
+        <div>
+          <h1 id="title">CAT Preparation Guide — Time Management, Mock Tests & Expert Strategies</h1>
+          <p>Comprehensive plan: concept building → practice → mocks → revision</p>
+          <div class="meta">
+            <span class="pill">Duration: 120 minutes (3 sections)</span>
+            <span class="pill">Goal: Improve accuracy, speed & strategy</span>
+          </div>
+        </div>
+      </header>
+
+      <section aria-labelledby="structure">
+        <h2 id="structure">1. Exam Structure (quick overview)</h2>
+        <table role="table" aria-label="CAT sections">
+          <thead>
+            <tr>
+              <th>Section</th>
+              <th>Description</th>
+              <th>Approx. Questions</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>VARC</td>
+              <td>Verbal Ability & Reading Comprehension</td>
+              <td>~24</td>
+              <td>40 min</td>
+            </tr>
+            <tr>
+              <td>DILR</td>
+              <td>Data Interpretation & Logical Reasoning</td>
+              <td>~20</td>
+              <td>40 min</td>
+            </tr>
+            <tr>
+              <td>QA</td>
+              <td>Quantitative Aptitude</td>
+              <td>~22</td>
+              <td>40 min</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section aria-labelledby="time-management">
+        <h2 id="time-management">2. Time Management Strategies</h2>
+        <p><strong>Daily study approach — 3 phases</strong></p>
+
+        <div class="grid">
+          <div>
+            <h3>Phase 1: Concept Building (0–2 months)</h3>
+            <ul>
+              <li>Focus on basics — formulas, grammar, reasoning foundations.</li>
+              <li>Study 2 sections/day. Suggested 3–4 hours/day total.</li>
+              <li>Example split: QA 1.5 hr, VARC 1 hr, DILR 1.5 hr.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Phase 2: Practice & Application (2–4 months)</h3>
+            <ul>
+              <li>Topic-wise problems and past-year questions.</li>
+              <li>Start 1 mock test/week; analyze deeply.</li>
+              <li>Target weak topic improvement each week.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Phase 3: Mock & Revision (Last 2 months)</h3>
+            <ul>
+              <li>3–4 mocks/week; daily revision of formulas & vocab.</li>
+              <li>Timed practice to simulate exam pressure.</li>
+            </ul>
+          </div>
+
+          <div class="full note">
+            <strong>Tip:</strong> sections are time-bound. Practice with section timers to develop pacing.
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="mocks">
+        <h2 id="mocks">3. Mock Test Strategy</h2>
+        <p><strong>Why mocks matter:</strong> reveal strengths/weaknesses, improve speed, teach time allocation.</p>
+
+        <h3>How to take mocks effectively</h3>
+        <ol>
+          <li>Simulate real exam conditions: same time of day, no interruptions.</li>
+          <li>Treat every mock as final — no pausing, no extra help.</li>
+          <li>After-test analysis: log what went wrong, time leaks, and lucky guesses.</li>
+          <li>Maintain a mistake logbook and revisit it weekly.</li>
+        </ol>
+
+        <h3>Mock frequency plan</h3>
+        <table role="table" aria-label="Mock test plan">
+          <thead>
+            <tr><th>When</th><th>Frequency</th><th>Focus</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Months 1–2</td><td>1 mock/week</td><td>Pattern familiarity</td></tr>
+            <tr><td>Months 3–4</td><td>2 mocks/week</td><td>Speed & accuracy</td></tr>
+            <tr><td>Last 2 months</td><td>3–4 mocks/week</td><td>Real exam simulation</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section aria-labelledby="section-wise">
+        <h2 id="section-wise">4. Section-wise Expert Strategies</h2>
+
+        <div class="grid">
+          <div>
+            <h3>VARC (Verbal & RC)</h3>
+            <ul>
+              <li>Read daily: editorials & long-form articles to improve comprehension.</li>
+              <li>Prioritize RC accuracy before speed; practice 1–2 RCs daily.</li>
+              <li>Para-jumbles & sentence arrangement: 10–15 practice questions daily.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>DILR (DI & LR)</h3>
+            <ul>
+              <li>Practice different DI formats (tables, charts, caselets).</li>
+              <li>Attempt 2–3 mixed sets daily; time each set.</li>
+              <li>In exam: scan all sets, start with easiest; don’t waste >10 minutes on a set.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>QA (Quantitative Aptitude)</h3>
+            <ul>
+              <li>Prioritize Arithmetic, Algebra, Geometry, Number Theory.</li>
+              <li>Create a formula sheet and revise weekly.</li>
+              <li>Solve 30–40 QA problems daily; aim for accuracy over sheer attempt count.</li>
+            </ul>
+          </div>
+
+          <div class="full note">
+            <strong>Expert tip:</strong> Accuracy matters more than attempts. A few careless mistakes can drastically drop percentile.
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="mental">
+        <h2 id="mental">5. Mental Preparation & Focus</h2>
+        <ul>
+          <li>Set realistic progressive targets — aim for steady percentile growth.</li>
+          <li>Consistency > intensity: focused daily practice beats irregular long sessions.</li>
+          <li>Manage stress — exercise, short meditations, and proper sleep.</li>
+          <li>Stay motivated via peer groups or toppers' strategy videos.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="expert-tips">
+        <h2 id="expert-tips">6. Expert CAT Preparation Tips</h2>
+        <ol>
+          <li>Quality over quantity: master high-yield topics first.</li>
+          <li>Learn time-saving shortcuts but keep conceptual clarity intact.</li>
+          <li>Use sectional tests to improve each area regularly.</li>
+          <li>Analyze every mock — identify patterns in mistakes and fix root causes.</li>
+          <li>Skip answers you’re unsure of — negative marking penalizes guessing.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="last-month">
+        <h2 id="last-month">7. Last 1-Month Strategy</h2>
+        <ul>
+          <li>Give full-length mocks every 2–3 days; spend 70% time on analysis.</li>
+          <li>Daily revision of formula sheet, short tricks, and high-frequency question types.</li>
+          <li>Maintain sleep schedule and calm pre-exam routine.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="final">
+        <h2 id="final">Final Thoughts</h2>
+        <p><strong>Three pillars:</strong> Concept → Practice → Analysis. Focus on these consistently and your CAT performance will improve.</p>
+
+        <div class="cta-row" role="group" aria-label="actions">
+          <button class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button>
+          <button class="btn btn-ghost" onclick="downloadPlan()">Download HTML</button>
+        </div>
+      </section>
+
+      <footer>
+        Need a printable weekly timetable or a personalized study plan, dont forget to give feedback.
+      </footer>
+    </article>
+  </main>
+
+  <script>
+    function downloadPlan(){
+      const content = document.documentElement.outerHTML;
+      const blob = new Blob([content], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'cat-preparation-plan.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body */
+body {
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  background: linear-gradient(135deg, #007bff, #00aaff);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.banner h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+.banner p {
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+/* Main Section */
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1000px;
+}
+
+/* Box Common Style */
+.box {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  padding: 40px 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.box p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.box a {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* CAT Section */
+.cat {
+  border-top: 6px solid #ff8c00;
+}
+
+.cat a {
+  background: #ff8c00;
+}
+
+.cat:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+}
+
+/* Pharma Section */
+.pharma {
+  border-top: 6px solid #007bff;
+}
+
+.pharma a {
+  background: #007bff;
+}
+
+.pharma:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: auto;
+}
