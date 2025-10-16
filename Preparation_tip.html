@@ -1,163 +1,222 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CAT Preparation Guide — Time Management, Mocks & Expert Strategies</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAT Preparation Guide — PharmaCAT Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#f7f8fb;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#0ea5a4;
-      --heading:#0f172a;
-      --maxwidth:900px;
-      --shadow: 0 6px 18px rgba(15,23,42,0.08);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:linear-gradient(180deg, var(--bg), #ffffff);
-      color:var(--heading);
-      line-height:1.55;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:28px;
-      display:flex;
-      justify-content:center;
-    }
-    .container{
-      max-width:var(--maxwidth);
-      width:100%;
-    }
-    .card{
-      background:var(--card);
-      border-radius:12px;
-      padding:28px;
-      box-shadow:var(--shadow);
-      margin-bottom:20px;
-    }
-    header{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      margin-bottom:8px;
-    }
-    header h1{
-      margin:0;
-      font-size:20px;
-      letter-spacing:-0.2px;
-    }
-    header p{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-    }
-    .meta{
-      display:flex;
-      gap:12px;
-      margin-top:10px;
-      flex-wrap:wrap;
-    }
-    .pill{
-      background:rgba(14,165,164,0.08);
-      color:var(--accent);
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:13px;
-      border:1px solid rgba(14,165,164,0.12);
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
     }
 
-    h2{font-size:16px;margin:18px 0 8px;}
-    h3{font-size:14px;margin:12px 0 6px;color:#0b1220;}
-    p{margin:8px 0;color:#111827;}
-    ul{margin:8px 0 8px 20px;}
-    ol{margin:8px 0 8px 20px;}
-    table{
-      width:100%;
-      border-collapse:collapse;
-      margin-top:8px;
-      font-size:14px;
+    body {
+      background: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      color: #111827;
     }
-    thead th{
-      text-align:left;
-      padding:8px;
-      background:#f3f4f6;
-      border-bottom:1px solid #e6e7ea;
-      font-weight:600;
-    }
-    tbody td{
-      padding:10px 8px;
-      border-bottom:1px dashed #eef0f3;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-    }
-    .full{grid-column:1/-1;}
-    .note{
-      background:linear-gradient(90deg, rgba(14,165,164,0.06), rgba(99,102,241,0.04));
-      padding:12px;
-      border-radius:8px;
-      border:1px solid rgba(15,23,42,0.03);
-      color:#0f172a;
-      font-size:14px;
-    }
-    .cta-row{
-      display:flex;
-      gap:10px;
-      margin-top:14px;
-      flex-wrap:wrap;
-    }
-    .btn{
-      padding:10px 14px;
-      border-radius:8px;
-      font-weight:600;
-      cursor:pointer;
-      border:0;
-    }
-    .btn-primary{
-      background:var(--accent);
-      color:white;
-    }
-    .btn-ghost{
-      background:transparent;
-      border:1px solid #e6e7ea;
-      color:var(--heading);
-    }
-    footer{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
 
-    /* Print friendly */
-    @media print{
-      body{padding:0}
-      .card{box-shadow:none;border-radius:0}
+    /* Banner */
+    .banner {
+      width: 100%;
+      background: linear-gradient(135deg, #007bff, #00aaff);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+      border-radius: 12px;
+    }
+
+    .banner h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .banner p {
+      font-size: 1.1rem;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    /* Meta Pills */
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      background: rgba(255, 140, 0, 0.1);
+      color: #ff8c00;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      border: 1px solid rgba(255,140,0,0.3);
+    }
+
+    /* Sections as Cards */
+    section {
+      background: #ffffff;
+      padding: 28px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(255, 140, 0, 0.2);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+
+    p, li {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 8px;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    thead th {
+      text-align: left;
+      padding: 10px;
+      background: #f3f4f6;
+      border-bottom: 1px solid #e6e7ea;
+      font-weight: 600;
+    }
+
+    tbody td {
+      padding: 10px 8px;
+      border-bottom: 1px dashed #eef0f3;
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    /* Note / Tip Boxes */
+    .note {
+      background: linear-gradient(90deg, rgba(255,140,0,0.06), rgba(0,123,255,0.04));
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(15,23,42,0.03);
+      font-size: 0.95rem;
+      color: #0f172a;
+    }
+
+    /* Buttons */
+    .cta-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .btn {
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 0;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #ff8c00;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.1);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid #e6e7ea;
+      color: #0f172a;
+    }
+
+    .btn-ghost:hover {
+      background: #f3f4f6;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 20px;
     }
 
     /* Responsive */
-    @media (max-width:740px){
-      .grid{grid-template-columns:1fr}
+    @media (max-width: 740px){
+      .grid { grid-template-columns: 1fr; }
+      .banner h1 { font-size: 2rem; }
+      .banner p { font-size: 1rem; }
+      section { padding: 20px; }
     }
   </style>
 </head>
 <body>
-  <main class="container" role="main">
-    <article class="card" aria-labelledby="title">
-      <header>
-        <div>
-          <h1 id="title">CAT Preparation Guide — Time Management, Mock Tests & Expert Strategies</h1>
-          <p>Comprehensive plan: concept building → practice → mocks → revision</p>
-          <div class="meta">
-            <span class="pill">Duration: 120 minutes (3 sections)</span>
-            <span class="pill">Goal: Improve accuracy, speed & strategy</span>
-          </div>
-        </div>
-      </header>
 
-      <section aria-labelledby="structure">
-        <h2 id="structure">1. Exam Structure (quick overview)</h2>
-        <table role="table" aria-label="CAT sections">
+  <!-- Banner -->
+  <div class="banner">
+    <h1>CAT Preparation Guide</h1>
+    <p>Time Management, Mock Tests & Expert Strategies</p>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <article>
+
+      <!-- Exam Structure -->
+      <section>
+        <h2>1. Exam Structure (Quick Overview)</h2>
+        <table>
           <thead>
             <tr>
               <th>Section</th>
@@ -167,32 +226,21 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>VARC</td>
-              <td>Verbal Ability & Reading Comprehension</td>
-              <td>~24</td>
-              <td>40 min</td>
-            </tr>
-            <tr>
-              <td>DILR</td>
-              <td>Data Interpretation & Logical Reasoning</td>
-              <td>~20</td>
-              <td>40 min</td>
-            </tr>
-            <tr>
-              <td>QA</td>
-              <td>Quantitative Aptitude</td>
-              <td>~22</td>
-              <td>40 min</td>
-            </tr>
+            <tr><td>VARC</td><td>Verbal Ability & Reading Comprehension</td><td>~24</td><td>40 min</td></tr>
+            <tr><td>DILR</td><td>Data Interpretation & Logical Reasoning</td><td>~20</td><td>40 min</td></tr>
+            <tr><td>QA</td><td>Quantitative Aptitude</td><td>~22</td><td>40 min</td></tr>
           </tbody>
         </table>
+        <div class="meta">
+          <span class="pill">Duration: 120 minutes (3 sections)</span>
+          <span class="pill">Goal: Improve accuracy, speed & strategy</span>
+        </div>
       </section>
 
-      <section aria-labelledby="time-management">
-        <h2 id="time-management">2. Time Management Strategies</h2>
+      <!-- Time Management -->
+      <section>
+        <h2>2. Time Management Strategies</h2>
         <p><strong>Daily study approach — 3 phases</strong></p>
-
         <div class="grid">
           <div>
             <h3>Phase 1: Concept Building (0–2 months)</h3>
@@ -202,7 +250,6 @@
               <li>Example split: QA 1.5 hr, VARC 1 hr, DILR 1.5 hr.</li>
             </ul>
           </div>
-
           <div>
             <h3>Phase 2: Practice & Application (2–4 months)</h3>
             <ul>
@@ -211,7 +258,6 @@
               <li>Target weak topic improvement each week.</li>
             </ul>
           </div>
-
           <div>
             <h3>Phase 3: Mock & Revision (Last 2 months)</h3>
             <ul>
@@ -219,17 +265,16 @@
               <li>Timed practice to simulate exam pressure.</li>
             </ul>
           </div>
-
           <div class="full note">
             <strong>Tip:</strong> sections are time-bound. Practice with section timers to develop pacing.
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="mocks">
-        <h2 id="mocks">3. Mock Test Strategy</h2>
+      <!-- Mock Test Strategy -->
+      <section>
+        <h2>3. Mock Test Strategy</h2>
         <p><strong>Why mocks matter:</strong> reveal strengths/weaknesses, improve speed, teach time allocation.</p>
-
         <h3>How to take mocks effectively</h3>
         <ol>
           <li>Simulate real exam conditions: same time of day, no interruptions.</li>
@@ -237,9 +282,8 @@
           <li>After-test analysis: log what went wrong, time leaks, and lucky guesses.</li>
           <li>Maintain a mistake logbook and revisit it weekly.</li>
         </ol>
-
         <h3>Mock frequency plan</h3>
-        <table role="table" aria-label="Mock test plan">
+        <table>
           <thead>
             <tr><th>When</th><th>Frequency</th><th>Focus</th></tr>
           </thead>
@@ -251,9 +295,9 @@
         </table>
       </section>
 
-      <section aria-labelledby="section-wise">
-        <h2 id="section-wise">4. Section-wise Expert Strategies</h2>
-
+      <!-- Section-wise Expert Strategies -->
+      <section>
+        <h2>4. Section-wise Expert Strategies</h2>
         <div class="grid">
           <div>
             <h3>VARC (Verbal & RC)</h3>
@@ -263,7 +307,6 @@
               <li>Para-jumbles & sentence arrangement: 10–15 practice questions daily.</li>
             </ul>
           </div>
-
           <div>
             <h3>DILR (DI & LR)</h3>
             <ul>
@@ -272,7 +315,6 @@
               <li>In exam: scan all sets, start with easiest; don’t waste >10 minutes on a set.</li>
             </ul>
           </div>
-
           <div>
             <h3>QA (Quantitative Aptitude)</h3>
             <ul>
@@ -281,15 +323,15 @@
               <li>Solve 30–40 QA problems daily; aim for accuracy over sheer attempt count.</li>
             </ul>
           </div>
-
           <div class="full note">
             <strong>Expert tip:</strong> Accuracy matters more than attempts. A few careless mistakes can drastically drop percentile.
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="mental">
-        <h2 id="mental">5. Mental Preparation & Focus</h2>
+      <!-- Mental Preparation -->
+      <section>
+        <h2>5. Mental Preparation & Focus</h2>
         <ul>
           <li>Set realistic progressive targets — aim for steady percentile growth.</li>
           <li>Consistency > intensity: focused daily practice beats irregular long sessions.</li>
@@ -298,8 +340,9 @@
         </ul>
       </section>
 
-      <section aria-labelledby="expert-tips">
-        <h2 id="expert-tips">6. Expert CAT Preparation Tips</h2>
+      <!-- Expert Tips -->
+      <section>
+        <h2>6. Expert CAT Preparation Tips</h2>
         <ol>
           <li>Quality over quantity: master high-yield topics first.</li>
           <li>Learn time-saving shortcuts but keep conceptual clarity intact.</li>
@@ -309,8 +352,9 @@
         </ol>
       </section>
 
-      <section aria-labelledby="last-month">
-        <h2 id="last-month">7. Last 1-Month Strategy</h2>
+      <!-- Last Month Strategy -->
+      <section>
+        <h2>7. Last 1-Month Strategy</h2>
         <ul>
           <li>Give full-length mocks every 2–3 days; spend 70% time on analysis.</li>
           <li>Daily revision of formula sheet, short tricks, and high-frequency question types.</li>
@@ -318,19 +362,20 @@
         </ul>
       </section>
 
-      <section aria-labelledby="final">
-        <h2 id="final">Final Thoughts</h2>
+      <!-- Final Thoughts -->
+      <section>
+        <h2>Final Thoughts</h2>
         <p><strong>Three pillars:</strong> Concept → Practice → Analysis. Focus on these consistently and your CAT performance will improve.</p>
-
-        <div class="cta-row" role="group" aria-label="actions">
+        <div class="cta-row">
           <button class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button>
           <button class="btn btn-ghost" onclick="downloadPlan()">Download HTML</button>
         </div>
       </section>
 
       <footer>
-        Need a printable weekly timetable or a personalized study plan, dont forget to give feedback.
+        © 2025 PharmaCAT Hub | Created by Utkarsh
       </footer>
+
     </article>
   </main>
 
@@ -341,12 +386,13 @@
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'cat-preparation-plan.html';
+      a.download = 'cat-preparation-guide.html';
       document.body.appendChild(a);
       a.click();
       a.remove();
       URL.revokeObjectURL(url);
     }
   </script>
+
 </body>
 </html>
