@@ -1,192 +1,277 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CAT Preparation Resources — Books, Online Platforms & Notes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAT Preparation Resources — PharmaCAT Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg:#f7f8fb;
-      --card:#ffffff;
-      --accent:#0ea5a4;
-      --text:#111827;
-      --muted:#6b7280;
-      --shadow:0 6px 18px rgba(15,23,42,0.08);
-      font-family: Inter, system-ui, sans-serif;
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
     }
+
     body {
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      display:flex;
-      justify-content:center;
-      padding:24px;
+      background: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      color: #111827;
     }
-    main {
-      background:var(--card);
-      border-radius:12px;
-      box-shadow:var(--shadow);
-      padding:28px;
-      max-width:900px;
-      width:100%;
+
+    /* Banner */
+    .banner {
+      width: 100%;
+      background: linear-gradient(135deg, #007bff, #00aaff);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+      border-radius: 12px;
     }
-    h1 {
-      color:var(--accent);
-      font-size:22px;
-      margin-bottom:10px;
+
+    .banner h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
     }
+
+    .banner p {
+      font-size: 1.1rem;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    /* Sections as Cards */
+    section {
+      background: #ffffff;
+      padding: 28px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+    }
+
     h2 {
-      margin-top:24px;
-      color:#0f172a;
-      border-left:4px solid var(--accent);
-      padding-left:8px;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #0f172a;
+      border-left: 6px solid #ff8c00;
+      padding-left: 10px;
     }
+
     h3 {
-      color:#0f172a;
-      margin-top:18px;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #0f172a;
     }
-    h4 {
-      color:#0f172a;
-      margin-top:12px;
+
+    p, li {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #555;
     }
-    p {margin:8px 0;}
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 8px;
+    }
+
+    /* Tables */
     table {
-      width:100%;
-      border-collapse:collapse;
-      margin-top:8px;
-      font-size:14px;
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
     }
-    thead {
-      background:#f3f4f6;
+
+    thead th {
+      text-align: left;
+      padding: 10px;
+      background: #f3f4f6;
+      border-bottom: 1px solid #e6e7ea;
+      font-weight: 600;
     }
-    th, td {
-      padding:10px;
-      border-bottom:1px solid #e5e7eb;
-      text-align:left;
+
+    tbody td {
+      padding: 10px 8px;
+      border-bottom: 1px dashed #eef0f3;
     }
-    ul {
-      margin:8px 0 8px 20px;
-    }
+
+    /* Note / Tip Boxes */
     .note {
-      background:linear-gradient(90deg, rgba(14,165,164,0.07), rgba(99,102,241,0.05));
-      border-left:4px solid var(--accent);
-      padding:12px;
-      border-radius:8px;
-      margin-top:16px;
-      font-size:15px;
+      background: linear-gradient(90deg, rgba(255,140,0,0.06), rgba(0,123,255,0.04));
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(15,23,42,0.03);
+      font-size: 0.95rem;
+      color: #0f172a;
+      margin-top: 16px;
     }
+
+    /* Buttons */
     .btn {
-      background:var(--accent);
-      color:white;
-      border:none;
-      padding:10px 14px;
-      border-radius:8px;
-      cursor:pointer;
-      font-weight:600;
-      margin-top:18px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 0;
+      background: #ff8c00;
+      color: white;
+      margin-top: 18px;
+      transition: 0.3s ease;
     }
+
+    .btn:hover {
+      filter: brightness(1.1);
+    }
+
+    /* Footer */
     footer {
-      text-align:center;
-      margin-top:24px;
-      color:var(--muted);
-      font-size:13px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 20px;
     }
-    @media print {
-      body {padding:0;}
-      main {box-shadow:none;border-radius:0;}
-      .btn {display:none;}
+
+    /* Responsive */
+    @media (max-width: 740px){
+      h2 { font-size: 1.3rem; }
+      h3 { font-size: 1.1rem; }
+      section { padding: 20px; }
+      .banner h1 { font-size: 2rem; }
+      .banner p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
-  <main>
+
+  <!-- Banner -->
+  <div class="banner">
     <h1>CAT Preparation Resources</h1>
-    <p><strong>(Recommended books, online resources, and notes for easy and effective learning)</strong></p>
+    <p>Books, Online Platforms & Notes</p>
+  </div>
 
-    <h2>1. Recommended Books (Section-Wise)</h2>
+  <!-- Main Content -->
+  <main class="container">
 
-    <h3>Quantitative Aptitude (QA)</h3>
-    <table>
-      <thead><tr><th>Book</th><th>Author</th><th>Why It’s Useful</th></tr></thead>
-      <tbody>
-        <tr><td>How to Prepare for Quantitative Aptitude for CAT</td><td>Arun Sharma</td><td>Best for complete coverage with 3 difficulty levels.</td></tr>
-        <tr><td>Quantitative Aptitude Quantum CAT</td><td>Sarvesh K. Verma</td><td>Advanced questions for concept clarity.</td></tr>
-        <tr><td>NCERT Maths (Class 8–10)</td><td>—</td><td>Ideal for building arithmetic and algebra basics.</td></tr>
-      </tbody>
-    </table>
+    <article>
 
-    <h3>Data Interpretation & Logical Reasoning (DILR)</h3>
-    <table>
-      <thead><tr><th>Book</th><th>Author</th><th>Why It’s Useful</th></tr></thead>
-      <tbody>
-        <tr><td>How to Prepare for Data Interpretation & Logical Reasoning for CAT</td><td>Arun Sharma</td><td>Covers all question types found in CAT.</td></tr>
-        <tr><td>Puzzle & Logical Reasoning</td><td>Nishit K. Sinha</td><td>Develops diverse reasoning and speed.</td></tr>
-        <tr><td>Previous Year CAT Papers</td><td>—</td><td>Understand real pattern & difficulty level.</td></tr>
-      </tbody>
-    </table>
+      <!-- Recommended Books -->
+      <section>
+        <h2>1. Recommended Books (Section-Wise)</h2>
 
-    <h3>Verbal Ability & Reading Comprehension (VARC)</h3>
-    <table>
-      <thead><tr><th>Book</th><th>Author</th><th>Why It’s Useful</th></tr></thead>
-      <tbody>
-        <tr><td>How to Prepare for Verbal Ability & Reading Comprehension for CAT</td><td>Arun Sharma & Meenakshi Upadhyay</td><td>Excellent for grammar, vocab, and RC mastery.</td></tr>
-        <tr><td>Word Power Made Easy</td><td>Norman Lewis</td><td>Improves vocabulary & comprehension.</td></tr>
-        <tr><td>High School English Grammar & Composition</td><td>Wren & Martin</td><td>Strong grammar foundation.</td></tr>
-      </tbody>
-    </table>
+        <h3>Quantitative Aptitude (QA)</h3>
+        <table>
+          <thead><tr><th>Book</th><th>Author</th><th>Why It’s Useful</th></tr></thead>
+          <tbody>
+            <tr><td>How to Prepare for Quantitative Aptitude for CAT</td><td>Arun Sharma</td><td>Best for complete coverage with 3 difficulty levels.</td></tr>
+            <tr><td>Quantitative Aptitude Quantum CAT</td><td>Sarvesh K. Verma</td><td>Advanced questions for concept clarity.</td></tr>
+            <tr><td>NCERT Maths (Class 8–10)</td><td>—</td><td>Ideal for building arithmetic and algebra basics.</td></tr>
+          </tbody>
+        </table>
 
-    <h2>2. Online Resources</h2>
+        <h3>Data Interpretation & Logical Reasoning (DILR)</h3>
+        <table>
+          <thead><tr><th>Book</th><th>Author</th><th>Why It’s Useful</th></tr></thead>
+          <tbody>
+            <tr><td>How to Prepare for Data Interpretation & Logical Reasoning for CAT</td><td>Arun Sharma</td><td>Covers all question types found in CAT.</td></tr>
+            <tr><td>Puzzle & Logical Reasoning</td><td>Nishit K. Sinha</td><td>Develops diverse reasoning and speed.</td></tr>
+            <tr><td>Previous Year CAT Papers</td><td>—</td><td>Understand real pattern & difficulty level.</td></tr>
+          </tbody>
+        </table>
 
-    <h3>Free Platforms</h3>
-    <ul>
-      <li><strong>YouTube:</strong> 2IIM CAT, Handa Ka Funda, Unacademy (free lectures)</li>
-      <li><strong>Websites:</strong> Pagalguy.com, Mindworkzz, 2IIM Blog</li>
-      <li><strong>Reddit:</strong> r/CATprep community for strategy & peer advice</li>
-    </ul>
+        <h3>Verbal Ability & Reading Comprehension (VARC)</h3>
+        <table>
+          <thead><tr><th>Book</th><th>Author</th><th>Why It’s Useful</th></tr></thead>
+          <tbody>
+            <tr><td>How to Prepare for Verbal Ability & Reading Comprehension for CAT</td><td>Arun Sharma & Meenakshi Upadhyay</td><td>Excellent for grammar, vocab, and RC mastery.</td></tr>
+            <tr><td>Word Power Made Easy</td><td>Norman Lewis</td><td>Improves vocabulary & comprehension.</td></tr>
+            <tr><td>High School English Grammar & Composition</td><td>Wren & Martin</td><td>Strong grammar foundation.</td></tr>
+          </tbody>
+        </table>
+      </section>
 
-    <h3>Paid Platforms</h3>
-    <ul>
-      <li>TIME, IMS, Career Launcher – Complete CAT programs with mocks</li>
-      <li>2IIM Online Course – Concept clarity and personal mentoring</li>
-      <li>Unacademy / Byju’s CAT Prep – Live classes and structured tests</li>
-    </ul>
+      <!-- Online Resources -->
+      <section>
+        <h2>2. Online Resources</h2>
 
-    <h2>3. Notes & Practice Material</h2>
-    <table>
-      <thead><tr><th>Type</th><th>Source</th><th>Usage</th></tr></thead>
-      <tbody>
-        <tr><td>Formula Sheets</td><td>2IIM / Mindworkzz</td><td>Revise daily, especially Arithmetic & Algebra.</td></tr>
-        <tr><td>Vocabulary Lists</td><td>Word Power Made Easy, Flashcards</td><td>15-minute daily review.</td></tr>
-        <tr><td>Previous Year Questions</td><td>Official CAT site</td><td>Real exam-level practice.</td></tr>
-        <tr><td>Topic PDFs</td><td>Career Launcher, Unacademy</td><td>For structured revision.</td></tr>
-      </tbody>
-    </table>
+        <h3>Free Platforms</h3>
+        <ul>
+          <li><strong>YouTube:</strong> 2IIM CAT, Handa Ka Funda, Unacademy (free lectures)</li>
+          <li><strong>Websites:</strong> Pagalguy.com, Mindworkzz, 2IIM Blog</li>
+          <li><strong>Reddit:</strong> r/CATprep community for strategy & peer advice</li>
+        </ul>
 
-    <h2>4. Apps for On-the-Go Learning</h2>
-    <ul>
-      <li><strong>Anki / Quizlet:</strong> Flashcards for vocab & formulas.</li>
-      <li><strong>Pocket / Feedly:</strong> Save articles for VARC practice.</li>
-      <li><strong>Spotify Podcasts:</strong> Listen to English comprehension podcasts daily.</li>
-    </ul>
+        <h3>Paid Platforms</h3>
+        <ul>
+          <li>TIME, IMS, Career Launcher – Complete CAT programs with mocks</li>
+          <li>2IIM Online Course – Concept clarity and personal mentoring</li>
+          <li>Unacademy / Byju’s CAT Prep – Live classes and structured tests</li>
+        </ul>
+      </section>
 
-    <h2>5. Expert Tips for Using Resources</h2>
-    <ul>
-      <li>Pick one main book per section; avoid too many materials.</li>
-      <li>Use online content for clarity & revision, not theory building.</li>
-      <li>Make short notes and formula cards while studying.</li>
-      <li>Revise notes weekly and apply learning in mocks.</li>
-    </ul>
+      <!-- Notes & Practice Material -->
+      <section>
+        <h2>3. Notes & Practice Material</h2>
+        <table>
+          <thead><tr><th>Type</th><th>Source</th><th>Usage</th></tr></thead>
+          <tbody>
+            <tr><td>Formula Sheets</td><td>2IIM / Mindworkzz</td><td>Revise daily, especially Arithmetic & Algebra.</td></tr>
+            <tr><td>Vocabulary Lists</td><td>Word Power Made Easy, Flashcards</td><td>15-minute daily review.</td></tr>
+            <tr><td>Previous Year Questions</td><td>Official CAT site</td><td>Real exam-level practice.</td></tr>
+            <tr><td>Topic PDFs</td><td>Career Launcher, Unacademy</td><td>For structured revision.</td></tr>
+          </tbody>
+        </table>
+      </section>
 
-    <div class="note">
-      <strong>Summary:</strong> Books → Build Concepts • Online Platforms → Reinforce • Notes → Revise & Master
-    </div>
+      <!-- Apps -->
+      <section>
+        <h2>4. Apps for On-the-Go Learning</h2>
+        <ul>
+          <li><strong>Anki / Quizlet:</strong> Flashcards for vocab & formulas.</li>
+          <li><strong>Pocket / Feedly:</strong> Save articles for VARC practice.</li>
+          <li><strong>Spotify Podcasts:</strong> Listen to English comprehension podcasts daily.</li>
+        </ul>
+      </section>
 
-    <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+      <!-- Expert Tips -->
+      <section>
+        <h2>5. Expert Tips for Using Resources</h2>
+        <ul>
+          <li>Pick one main book per section; avoid too many materials.</li>
+          <li>Use online content for clarity & revision, not theory building.</li>
+          <li>Make short notes and formula cards while studying.</li>
+          <li>Revise notes weekly and apply learning in mocks.</li>
+        </ul>
 
-    <footer>
-      © 2025 CAT Prep Resource Sheet — Created by ChatGPT | Tailored for serious CAT aspirants
-    </footer>
+        <div class="note">
+          <strong>Summary:</strong> Books → Build Concepts • Online Platforms → Reinforce • Notes → Revise & Master
+        </div>
+
+        <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+      </section>
+
+      <footer>
+        © 2025 PharmaCAT Hub — Created by Utkarsh
+      </footer>
+
+    </article>
+
   </main>
+
 </body>
 </html>
