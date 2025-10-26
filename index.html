@@ -5,21 +5,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PharmaCAT Hub</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ----------------- Authentication Modal CSS ----------------- */
+    #authModal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .auth-box {
+      background: #ffffff;
+      padding: 35px 30px;
+      border-radius: 15px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .auth-box input {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .auth-box input:focus {
+      outline: none;
+      border-color: #0ea5a4;
+      box-shadow: 0 0 8px rgba(14,165,164,0.4);
+    }
+
+    .auth-box button {
+      width: 100%;
+      padding: 12px 0;
+      margin-top: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, #0ea5a4, #06b6d4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .auth-box button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(14,165,164,0.4);
+    }
+
+    .auth-box p span {
+      color: #0ea5a4;
+      cursor: pointer;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .auth-box p span:hover {
+      color: #06b6d4;
+    }
+
+    .error {
+      color: #ef4444;
+      font-size: 13px;
+      margin-top: 5px;
+      min-height: 18px;
+    }
+
+    .auth-box h2 {
+      margin-bottom: 20px;
+      color: #0f172a;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    /* Logout button */
+    #logoutBtn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #ef4444;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      display: none;
+      transition: background 0.3s ease;
+    }
+
+    #logoutBtn:hover {
+      background: #dc2626;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Banner Section -->
+  <!-- Authentication Modal -->
+  <div id="authModal">
+    <div class="auth-box" id="loginBox">
+      <h2>Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <button id="loginBtn">Login</button>
+      <p>Don't have an account? <span id="showSignup">Sign Up</span></p>
+      <p class="error" id="loginError"></p>
+    </div>
+
+    <div class="auth-box" id="signupBox" style="display:none;">
+      <h2>Sign Up</h2>
+      <input type="email" id="signupEmail" placeholder="Email" required />
+      <input type="password" id="signupPassword" placeholder="Password" required />
+      <button id="signupBtn">Sign Up</button>
+      <p>Already have an account? <span id="showLogin">Login</span></p>
+      <p class="error" id="signupError"></p>
+    </div>
+  </div>
+
+  <!-- Homepage Content -->
   <header class="banner">
     <h1>PharmaCAT Hub</h1>
     <p>Learn Smart. Prepare Better.</p>
+    <button id="logoutBtn">Logout</button>
   </header>
 
-  <!-- Main Section -->
   <main class="main-section">
     <div class="box cat">
       <h2>CAT Section</h2>
-      <p> Syllabus, Strategies, and Preparation Tips</p>
-       <a href="cat.html" target="_blank">Explore CAT</a>
+      <p>Syllabus, Strategies, and Preparation Tips</p>
+      <a href="cat.html" target="_blank">Explore CAT</a>
     </div>
 
     <div class="box pharma">
@@ -29,10 +156,87 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>© 2025 PharmaCAT Hub | Created by Utkarsh</p>
   </footer>
 
+  <script>
+    const authModal = document.getElementById('authModal');
+    const loginBox = document.getElementById('loginBox');
+    const signupBox = document.getElementById('signupBox');
+    const showSignup = document.getElementById('showSignup');
+    const showLogin = document.getElementById('showLogin');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    const loginBtn = document.getElementById('loginBtn');
+    const signupBtn = document.getElementById('signupBtn');
+
+    const loginEmail = document.getElementById('loginEmail');
+    const loginPassword = document.getElementById('loginPassword');
+    const signupEmail = document.getElementById('signupEmail');
+    const signupPassword = document.getElementById('signupPassword');
+
+    const loginError = document.getElementById('loginError');
+    const signupError = document.getElementById('signupError');
+
+    // Toggle login/signup
+    showSignup.addEventListener('click', () => {
+      loginBox.style.display = 'none';
+      signupBox.style.display = 'block';
+    });
+    showLogin.addEventListener('click', () => {
+      signupBox.style.display = 'none';
+      loginBox.style.display = 'block';
+    });
+
+    // Check if already logged in
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+      authModal.style.display = 'none';
+      logoutBtn.style.display = 'block';
+    }
+
+    // Signup
+    signupBtn.addEventListener('click', () => {
+      const email = signupEmail.value.trim();
+      const password = signupPassword.value.trim();
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      if(users.find(u => u.email === email)) {
+        signupError.textContent = "User already exists!";
+        return;
+      }
+      users.push({email, password});
+      localStorage.setItem('users', JSON.stringify(users));
+      alert("Sign up successful! Please login.");
+      signupBox.style.display = 'none';
+      loginBox.style.display = 'block';
+      signupError.textContent = "";
+    });
+
+    // Login
+    loginBtn.addEventListener('click', () => {
+      const email = loginEmail.value.trim();
+      const password = loginPassword.value.trim();
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      const user = users.find(u => u.email === email && u.password === password);
+      if(user) {
+        localStorage.setItem('loggedInUser', email);
+        authModal.style.display = 'none';
+        logoutBtn.style.display = 'block';
+        loginError.textContent = "";
+      } else {
+        loginError.textContent = "Invalid email or password!";
+      }
+    });
+
+    // Logout
+    logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem('loggedInUser');
+      authModal.style.display = 'flex';
+      logoutBtn.style.display = 'none';
+      loginEmail.value = '';
+      loginPassword.value = '';
+    });
+  </script>
 </body>
 </html>
